@@ -1,0 +1,480 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Translated Report (Full Report Below)\
+-------------------------------------\
+\
+Process:               node [1899]\
+Path:                  /Library/Application Support/Adobe/*/CCLibrary.app/Contents/MacOS/CCLibrary\
+Identifier:            node\
+Version:               ???\
+Code Type:             X86-64 (Native)\
+Parent Process:        launchd [1]\
+User ID:               501\
+\
+Date/Time:             2022-06-13 14:20:09.6284 +0530\
+OS Version:            macOS 12.5 (21G5037d)\
+Report Version:        12\
+Anonymous UUID:        3F200E21-F56C-84F8-2FD4-959F9B56A689\
+\
+Sleep/Wake UUID:       9ADCB84E-B9D4-4FD2-A414-C8A5B3307886\
+\
+Time Awake Since Boot: 3900 seconds\
+Time Since Wake:       2734 seconds\
+\
+System Integrity Protection: enabled\
+\
+Crashed Thread:        12  VulcanMsgRecv\
+\
+Exception Type:        EXC_BAD_ACCESS (SIGSEGV)\
+Exception Codes:       UNKNOWN_0xD at 0x0000000000000000\
+Exception Codes:       0x000000000000000d, 0x0000000000000000\
+Exception Note:        EXC_CORPSE_NOTIFY\
+\
+Termination Reason:    Namespace SIGNAL, Code 11 Segmentation fault: 11\
+Terminating Process:   exc handler [1899]\
+\
+VM Region Info: 0 is not in any region.  Bytes before following region: 4294967296\
+      REGION TYPE                    START - END         [ VSIZE] PRT/MAX SHRMOD  REGION DETAIL\
+      UNUSED SPACE AT START\
+--->  \
+      __TEXT                      100000000-1014a5000    [ 20.6M] r-x/rwx SM=COW  ...nts/libs/node\
+\
+Thread 0::  Dispatch queue: com.apple.main-thread\
+0   libsystem_pthread.dylib       	    0x7ff801c7c477 pthread_mutex_destroy + 32\
+1   libc++.1.dylib                	    0x7ff801be0e35 std::__1::mutex::~mutex() + 9\
+2   libsystem_c.dylib             	    0x7ff801b78de4 __cxa_finalize_ranges + 409\
+3   libsystem_c.dylib             	    0x7ff801b78bfe exit + 35\
+4   node                          	       0x1000257d1 node::Exit(v8::FunctionCallbackInfo<v8::Value> const&) + 116\
+5   node                          	       0x10018a5c2 v8::internal::FunctionCallbackArguments::Call(void (*)(v8::FunctionCallbackInfo<v8::Value> const&)) + 466\
+6   node                          	       0x1001ead20 v8::internal::MaybeHandle<v8::internal::Object> v8::internal::(anonymous namespace)::HandleApiCallHelper<false>(v8::internal::Isolate*, v8::internal::Handle<v8::internal::HeapObject>, v8::internal::Handle<v8::internal::HeapObject>, v8::internal::Handle<v8::internal::FunctionTemplateInfo>, v8::internal::Handle<v8::internal::Object>, v8::internal::BuiltinArguments) + 816\
+7   node                          	       0x1001ea360 v8::internal::Builtin_Impl_HandleApiCall(v8::internal::BuiltinArguments, v8::internal::Isolate*) + 288\
+8   ???                           	    0x2fbb53a842fd ???\
+9   ???                           	    0x2fbb53b3d1d6 ???\
+10  ???                           	    0x2fbb53b3d1d6 ???\
+11  ???                           	    0x2fbb53a8535f ???\
+12  ???                           	    0x2fbb53b3d1d6 ???\
+13  ???                           	    0x2fbb53a8535f ???\
+14  ???                           	    0x2fbb53ad8ade ???\
+15  ???                           	    0x2fbb53b3d1d6 ???\
+16  ???                           	    0x2fbb53b3d1d6 ???\
+17  ???                           	    0x2fbb53a8535f ???\
+18  ???                           	    0x2fbb53a84239 ???\
+19  ???                           	    0x2fbb53a84101 ???\
+20  node                          	       0x100495323 v8::internal::(anonymous namespace)::Invoke(v8::internal::Isolate*, bool, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*, v8::internal::Handle<v8::internal::Object>, v8::internal::Execution::MessageHandling) + 675\
+21  node                          	       0x100494fee v8::internal::Execution::Call(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*) + 158\
+22  node                          	       0x1001706ed v8::Function::Call(v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*) + 381\
+23  VulcanJS.node                 	       0x104f61262 VulcanAdapter::asyncMessageCallback(uv_async_s*) + 860\
+24  node                          	       0x100ae3b2a uv__async_io + 317\
+25  node                          	       0x100af4110 uv__io_poll + 1934\
+26  node                          	       0x100ae3fab uv_run + 321\
+27  node                          	       0x100030e32 node::Start(v8::Isolate*, node::IsolateData*, int, char const* const*, int, char const* const*) + 816\
+28  node                          	       0x10002ac71 node::Start(uv_loop_s*, int, char const* const*, int, char const* const*) + 454\
+29  node                          	       0x10002a143 node::Start(int, char**) + 530\
+30  node                          	       0x100001034 start + 52\
+\
+Thread 1:\
+0   libsystem_kernel.dylib        	    0x7ff801c463da __psynch_cvwait + 10\
+1   libsystem_pthread.dylib       	    0x7ff801c80a6f _pthread_cond_wait + 1249\
+2   node                          	       0x100aef6bc uv_cond_wait + 9\
+3   node                          	       0x10007177b node::TaskQueue<v8::Task>::BlockingPop() + 55\
+4   node                          	       0x1000711fb node::BackgroundRunner(void*) + 46\
+5   libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+6   libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+Thread 2:\
+0   libsystem_kernel.dylib        	    0x7ff801c463da __psynch_cvwait + 10\
+1   libsystem_pthread.dylib       	    0x7ff801c80a6f _pthread_cond_wait + 1249\
+2   node                          	       0x100aef6bc uv_cond_wait + 9\
+3   node                          	       0x10007177b node::TaskQueue<v8::Task>::BlockingPop() + 55\
+4   node                          	       0x1000711fb node::BackgroundRunner(void*) + 46\
+5   libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+6   libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+Thread 3:\
+0   libsystem_kernel.dylib        	    0x7ff801c463da __psynch_cvwait + 10\
+1   libsystem_pthread.dylib       	    0x7ff801c80a6f _pthread_cond_wait + 1249\
+2   node                          	       0x100aef6bc uv_cond_wait + 9\
+3   node                          	       0x10007177b node::TaskQueue<v8::Task>::BlockingPop() + 55\
+4   node                          	       0x1000711fb node::BackgroundRunner(void*) + 46\
+5   libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+6   libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+Thread 4:\
+0   libsystem_kernel.dylib        	    0x7ff801c463da __psynch_cvwait + 10\
+1   libsystem_pthread.dylib       	    0x7ff801c80a6f _pthread_cond_wait + 1249\
+2   node                          	       0x100aef6bc uv_cond_wait + 9\
+3   node                          	       0x10007177b node::TaskQueue<v8::Task>::BlockingPop() + 55\
+4   node                          	       0x1000711fb node::BackgroundRunner(void*) + 46\
+5   libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+6   libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+Thread 5:\
+0   libsystem_kernel.dylib        	    0x7ff801c439a6 semaphore_wait_trap + 10\
+1   node                          	       0x100aef59a uv_sem_wait + 16\
+2   node                          	       0x1000a5186 node::inspector::(anonymous namespace)::StartIoThreadMain(void*) + 28\
+3   libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+4   libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+Thread 6:\
+0   libsystem_kernel.dylib        	    0x7ff801c463da __psynch_cvwait + 10\
+1   libsystem_pthread.dylib       	    0x7ff801c80a6f _pthread_cond_wait + 1249\
+2   node                          	       0x100aef6bc uv_cond_wait + 9\
+3   node                          	       0x100ae1fce worker + 232\
+4   libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+5   libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+Thread 7:\
+0   libsystem_kernel.dylib        	    0x7ff801c463da __psynch_cvwait + 10\
+1   libsystem_pthread.dylib       	    0x7ff801c80a6f _pthread_cond_wait + 1249\
+2   node                          	       0x100aef6bc uv_cond_wait + 9\
+3   node                          	       0x100ae1fce worker + 232\
+4   libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+5   libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+Thread 8:\
+0   libsystem_kernel.dylib        	    0x7ff801c463da __psynch_cvwait + 10\
+1   libsystem_pthread.dylib       	    0x7ff801c80a6f _pthread_cond_wait + 1249\
+2   node                          	       0x100aef6bc uv_cond_wait + 9\
+3   node                          	       0x100ae1fce worker + 232\
+4   libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+5   libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+Thread 9:\
+0   libsystem_kernel.dylib        	    0x7ff801c463da __psynch_cvwait + 10\
+1   libsystem_pthread.dylib       	    0x7ff801c80a6f _pthread_cond_wait + 1249\
+2   node                          	       0x100aef6bc uv_cond_wait + 9\
+3   node                          	       0x100ae1fce worker + 232\
+4   libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+5   libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+Thread 10::  Dispatch queue: com.apple.root.default-qos\
+0   libsystem_kernel.dylib        	    0x7ff801c4396a mach_msg_trap + 10\
+1   libsystem_kernel.dylib        	    0x7ff801c43cd8 mach_msg + 56\
+2   CoreFoundation                	    0x7ff801d4738d __CFRunLoopServiceMachPort + 319\
+3   CoreFoundation                	    0x7ff801d45a18 __CFRunLoopRun + 1276\
+4   CoreFoundation                	    0x7ff801d44e5c CFRunLoopRunSpecific + 562\
+5   CoreFoundation                	    0x7ff801dccdeb CFRunLoopRun + 40\
+6   libdispatch.dylib             	    0x7ff801ac80cc _dispatch_call_block_and_release + 12\
+7   libdispatch.dylib             	    0x7ff801ac9317 _dispatch_client_callout + 8\
+8   libdispatch.dylib             	    0x7ff801acb9fc _dispatch_queue_override_invoke + 787\
+9   libdispatch.dylib             	    0x7ff801ad8ac2 _dispatch_root_queue_drain + 343\
+10  libdispatch.dylib             	    0x7ff801ad925c _dispatch_worker_thread2 + 160\
+11  libsystem_pthread.dylib       	    0x7ff801c7cf8a _pthread_wqthread + 256\
+12  libsystem_pthread.dylib       	    0x7ff801c7bf57 start_wqthread + 15\
+\
+Thread 11:\
+0   libsystem_pthread.dylib       	    0x7ff801c7bf48 start_wqthread + 0\
+\
+Thread 12 Crashed:: VulcanMsgRecv\
+0   libc++abi.dylib               	    0x7ff801c3ccf1 __dynamic_cast + 26\
+1   VulcanMessage5.dylib          	       0x106f23dfe vcfoundation::io::Serializer::Serialize(vcfoundation::IVCType*) + 64\
+2   VulcanMessage5.dylib          	       0x106f24437 vcfoundation::io::Serializer::SerializeMap(vcfoundation::kyle::IVCMap*) + 125\
+3   VulcanMessage5.dylib          	       0x106f23f75 vcfoundation::io::Serializer::Serialize(vcfoundation::IVCType*) + 439\
+4   VulcanMessage5.dylib          	       0x106f24390 vcfoundation::io::Serializer::SerializeArray(vcfoundation::kyle::IVCList*) + 108\
+5   VulcanMessage5.dylib          	       0x106f23f4b vcfoundation::io::Serializer::Serialize(vcfoundation::IVCType*) + 397\
+6   VulcanMessage5.dylib          	       0x106f27acd vcfoundation::ncomm::Connection::WriteOut(vcfoundation::IVCType*) + 19\
+7   VulcanMessage5.dylib          	       0x106f27769 vcfoundation::ncomm::NCService::Execute(vcfoundation::ncomm::INCRequest*, vcfoundation::ncomm::INCListener&) + 143\
+8   VulcanMessage5.dylib          	       0x106f276ca vcfoundation::ncomm::NCService::Execute(vcfoundation::ncomm::INCRequest*) + 28\
+9   VulcanMessage5.dylib          	       0x106f19034 adobe::vulcan::servicemgr::CSIRequest::Execute() + 50\
+10  VulcanMessage5.dylib          	       0x106f1874b adobe::vulcan::servicemgr::RegisterForEventsRequest::Run() + 943\
+11  VulcanMessage5.dylib          	       0x106f28975 vcfoundation::thread::AbstractThread::Run() + 65\
+12  VulcanMessage5.dylib          	       0x106f2a88d vcfoundation::thread::thread::ThreadProc(void*) + 9\
+13  libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+14  libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+Thread 13:\
+0   libsystem_kernel.dylib        	    0x7ff801c4396a mach_msg_trap + 10\
+1   libsystem_kernel.dylib        	    0x7ff801c43cd8 mach_msg + 56\
+2   CoreFoundation                	    0x7ff801d4738d __CFRunLoopServiceMachPort + 319\
+3   CoreFoundation                	    0x7ff801d45a18 __CFRunLoopRun + 1276\
+4   CoreFoundation                	    0x7ff801d44e5c CFRunLoopRunSpecific + 562\
+5   CoreFoundation                	    0x7ff801dccdeb CFRunLoopRun + 40\
+6   node                          	       0x100af2f1b uv__cf_loop_runner + 70\
+7   libsystem_pthread.dylib       	    0x7ff801c804e1 _pthread_start + 125\
+8   libsystem_pthread.dylib       	    0x7ff801c7bf6b thread_start + 15\
+\
+\
+Thread 12 crashed with X86 Thread State (64-bit):\
+  rax: 0x0000beaddfddda00  rbx: 0x000060000170da00  rcx: 0x0000000000000000  rdx: 0x0000000106f36fc0\
+  rdi: 0x000060000170da00  rsi: 0x0000000106f36a30  rbp: 0x0000700006738c40  rsp: 0x0000700006738bb0\
+   r8: 0x06736e64696e6f69   r9: 0x0000700006738a00  r10: 0x0000700006738978  r11: 0xffff9000fc0e2690\
+  r12: 0x0000000000000000  r13: 0x000060000170da00  r14: 0x0000600000c22c70  r15: 0x000060000170da00\
+  rip: 0x00007ff801c3ccf1  rfl: 0x0000000000010202  cr2: 0x0000600002536000\
+  \
+Logical CPU:     2\
+Error Code:      0x00000000 \
+Trap Number:     13\
+\
+Thread 12 instruction stream:\
+  31 c9 e8 3f 00 00 00 48-85 c0 74 09 48 8d 05 e4  1..?...H..t.H...\
+  46 00 00 eb 07 48 8d 05-eb 46 00 00 49 89 07 41  F....H...F..I..A\
+  b7 01 44 89 f8 48 83 c4-08 5b 41 5e 41 5f 5d c3  ..D..H...[A^A_].\
+  49 8b 4e 20 48 8b 40 20-48 8b 49 08 48 3b 48 08  I.N H.@ H.I.H;H.\
+  41 0f 94 c7 eb dc 55 48-89 e5 41 57 41 56 41 55  A.....UH..AWAVAU\
+  41 54 53 48 83 ec 68 49-89 cc 49 89 fd 48 8b 07  ATSH..hI..I..H..\
+ [4c]8b 70 f0 49 01 fe 4c-8b 78 f8 48 89 55 d0 48  L.p.I..L.x.H.U.H	<==\
+  89 95 78 ff ff ff 48 89-7d 80 48 89 75 c8 48 89  ..x...H.\}.H.u.H.\
+  75 88 48 89 4d 90 0f 57-c0 0f 11 45 98 0f 11 45  u.H.M..W...E...E\
+  a8 0f 11 45 b7 8a 05 ec-c9 72 41 84 c0 0f 84 3d  ...E.....rA....=\
+  02 00 00 8a 1d 86 b4 78-41 84 db 0f 84 08 01 00  .......xA.......\
+  00 4c 3b 7d d0 0f 84 10-01 00 00 49 8b 7f 08 48  .L;\}.......I...H\
+\
+Binary Images:\
+    0x7ff801c7a000 -     0x7ff801c85fff libsystem_pthread.dylib (*) <9fdfa3fa-49b8-38d2-a827-597312313ed0> /usr/lib/system/libsystem_pthread.dylib\
+    0x7ff801bd3000 -     0x7ff801c2bfff libc++.1.dylib (*) <879ca921-82fd-3797-a825-d76b04210669> /usr/lib/libc++.1.dylib\
+    0x7ff801b4a000 -     0x7ff801bd2fff libsystem_c.dylib (*) <e8fb285d-f389-3f6e-b4c1-c709491b528d> /usr/lib/system/libsystem_c.dylib\
+       0x100000000 -        0x1014a4fff node (*) <5bf057ec-dab0-3166-a528-5c0fde2e2792> /Library/Application Support/Adobe/*/CCLibrary.app/Contents/libs/node\
+               0x0 - 0xffffffffffffffff ??? (*) <00000000-0000-0000-0000-000000000000> ???\
+       0x104f5c000 -        0x104f6cfff VulcanJS.node (*) <e5720d28-ffc9-3d00-8d23-cf512b7be553> /Library/Application Support/Adobe/*/CCLibrary.app/Contents/js/node_modules/node-vulcanjs/build/Release/VulcanJS.node\
+    0x7ff801c42000 -     0x7ff801c79fff libsystem_kernel.dylib (*) <1e734a78-3e63-3c82-b92c-84bd9a56a0d8> /usr/lib/system/libsystem_kernel.dylib\
+    0x7ff801cc7000 -     0x7ff8021c9fff com.apple.CoreFoundation (6.9) <e5c313ce-9afe-36db-a64c-6575512f2db9> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation\
+    0x7ff801ac6000 -     0x7ff801b0cfff libdispatch.dylib (*) <bea126fd-f5f9-38b4-a1d1-6a435acd3c75> /usr/lib/system/libdispatch.dylib\
+    0x7ff801c2c000 -     0x7ff801c41fff libc++abi.dylib (*) <c0d56998-9a5b-355f-a9a8-08e14dc88dc5> /usr/lib/libc++abi.dylib\
+       0x106f0a000 -        0x106f34fff VulcanMessage5.dylib (*) <63dd9314-514e-3903-8c18-b83a93e127a0> /Library/Application Support/Adobe/*/CCLibrary.app/Contents/js/node_modules/node-vulcanjs/build/Release/VulcanMessage5.dylib\
+\
+External Modification Summary:\
+  Calls made by other processes targeting this process:\
+    task_for_pid: 0\
+    thread_create: 0\
+    thread_set_state: 0\
+  Calls made by this process:\
+    task_for_pid: 0\
+    thread_create: 0\
+    thread_set_state: 0\
+  Calls made by all processes on this machine:\
+    task_for_pid: 0\
+    thread_create: 0\
+    thread_set_state: 0\
+\
+VM Region Summary:\
+ReadOnly portion of Libraries: Total=871.4M resident=0K(0%) swapped_out_or_unallocated=871.4M(100%)\
+Writable regions: Total=685.3M written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=685.3M(100%)\
+\
+                                VIRTUAL   REGION \
+REGION TYPE                        SIZE    COUNT (non-coalesced) \
+===========                     =======  ======= \
+Activity Tracing                   256K        1 \
+Kernel Alloc Once                    8K        1 \
+MALLOC                           203.8M       44 \
+MALLOC guard page                   16K        4 \
+MALLOC_NANO (reserved)           384.0M        1         reserved VM address space (unallocated)\
+Memory Tag 255                   546.9M      105 \
+ObjC additional data                15K        1 \
+STACK GUARD                       56.1M       14 \
+Stack                             73.6M       14 \
+VM_ALLOCATE                         16K        4 \
+__DATA                            16.3M      257 \
+__DATA_CONST                      11.0M      146 \
+__DATA_DIRTY                       493K       87 \
+__FONT_DATA                          4K        1 \
+__LINKEDIT                       663.0M       20 \
+__TEXT                           208.4M      268 \
+__UNICODE                          592K        1 \
+dyld private memory               1024K        1 \
+mapped file                        224K        2 \
+shared memory                      612K       10 \
+===========                     =======  ======= \
+TOTAL                              2.1G      982 \
+TOTAL, minus reserved VM space     1.7G      982 \
+\
+\
+\
+-----------\
+Full Report\
+-----------\
+\
+\{"app_name":"node","timestamp":"2022-06-13 14:20:11.00 +0530","app_version":"","slice_uuid":"5bf057ec-dab0-3166-a528-5c0fde2e2792","build_version":"","platform":1,"share_with_app_devs":1,"is_first_party":1,"bug_type":"309","os_version":"macOS 12.5 (21G5037d)","incident_id":"5469B379-51E9-4026-9DBB-11F192CF39AF","name":"node"\}\
+\{\
+  "uptime" : 3900,\
+  "procLaunch" : "2022-06-13 13:35:27.2068 +0530",\
+  "procRole" : "Default",\
+  "version" : 2,\
+  "userID" : 501,\
+  "deployVersion" : 210,\
+  "modelCode" : "iMac16,2",\
+  "procStartAbsTime" : 1218157727446,\
+  "coalitionID" : 2217,\
+  "osVersion" : \{\
+    "train" : "macOS 12.5",\
+    "build" : "21G5037d",\
+    "releaseType" : "User"\
+  \},\
+  "captureTime" : "2022-06-13 14:20:09.6284 +0530",\
+  "incident" : "5469B379-51E9-4026-9DBB-11F192CF39AF",\
+  "bug_type" : "309",\
+  "pid" : 1899,\
+  "procExitAbsTime" : 3900579564785,\
+  "cpuType" : "X86-64",\
+  "procName" : "node",\
+  "procPath" : "\\/Library\\/Application Support\\/Adobe\\/*\\/CCLibrary.app\\/Contents\\/MacOS\\/CCLibrary",\
+  "parentProc" : "launchd",\
+  "parentPid" : 1,\
+  "coalitionName" : "com.adobe.CCLibrary",\
+  "crashReporterKey" : "3F200E21-F56C-84F8-2FD4-959F9B56A689",\
+  "wakeTime" : 2734,\
+  "sleepWakeUUID" : "9ADCB84E-B9D4-4FD2-A414-C8A5B3307886",\
+  "sip" : "enabled",\
+  "vmRegionInfo" : "0 is not in any region.  Bytes before following region: 4294967296\\n      REGION TYPE                    START - END         [ VSIZE] PRT\\/MAX SHRMOD  REGION DETAIL\\n      UNUSED SPACE AT START\\n--->  \\n      __TEXT                      100000000-1014a5000    [ 20.6M] r-x\\/rwx SM=COW  ...nts\\/libs\\/node",\
+  "isCorpse" : 1,\
+  "exception" : \{"codes":"0x000000000000000d, 0x0000000000000000","rawCodes":[13,0],"type":"EXC_BAD_ACCESS","signal":"SIGSEGV","subtype":"UNKNOWN_0xD at 0x0000000000000000"\},\
+  "termination" : \{"flags":0,"code":11,"namespace":"SIGNAL","indicator":"Segmentation fault: 11","byProc":"exc handler","byPid":1899\},\
+  "vmregioninfo" : "0 is not in any region.  Bytes before following region: 4294967296\\n      REGION TYPE                    START - END         [ VSIZE] PRT\\/MAX SHRMOD  REGION DETAIL\\n      UNUSED SPACE AT START\\n--->  \\n      __TEXT                      100000000-1014a5000    [ 20.6M] r-x\\/rwx SM=COW  ...nts\\/libs\\/node",\
+  "extMods" : \{"caller":\{"thread_create":0,"thread_set_state":0,"task_for_pid":0\},"system":\{"thread_create":0,"thread_set_state":0,"task_for_pid":0\},"targeted":\{"thread_create":0,"thread_set_state":0,"task_for_pid":0\},"warnings":0\},\
+  "faultingThread" : 12,\
+  "threads" : [\{"id":22454,"queue":"com.apple.main-thread","frames":[\{"imageOffset":9335,"symbol":"pthread_mutex_destroy","symbolLocation":32,"imageIndex":0\},\{"imageOffset":56885,"symbol":"std::__1::mutex::~mutex()","symbolLocation":9,"imageIndex":1\},\{"imageOffset":191972,"symbol":"__cxa_finalize_ranges","symbolLocation":409,"imageIndex":2\},\{"imageOffset":191486,"symbol":"exit","symbolLocation":35,"imageIndex":2\},\{"imageOffset":153553,"symbol":"node::Exit(v8::FunctionCallbackInfo<v8::Value> const&)","symbolLocation":116,"imageIndex":3\},\{"imageOffset":1615298,"symbol":"v8::internal::FunctionCallbackArguments::Call(void (*)(v8::FunctionCallbackInfo<v8::Value> const&))","symbolLocation":466,"imageIndex":3\},\{"imageOffset":2010400,"symbol":"v8::internal::MaybeHandle<v8::internal::Object> v8::internal::(anonymous namespace)::HandleApiCallHelper<false>(v8::internal::Isolate*, v8::internal::Handle<v8::internal::HeapObject>, v8::internal::Handle<v8::internal::HeapObject>, v8::internal::Handle<v8::internal::FunctionTemplateInfo>, v8::internal::Handle<v8::internal::Object>, v8::internal::BuiltinArguments)","symbolLocation":816,"imageIndex":3\},\{"imageOffset":2007904,"symbol":"v8::internal::Builtin_Impl_HandleApiCall(v8::internal::BuiltinArguments, v8::internal::Isolate*)","symbolLocation":288,"imageIndex":3\},\{"imageOffset":52481608925949,"imageIndex":4\},\{"imageOffset":52481609683414,"imageIndex":4\},\{"imageOffset":52481609683414,"imageIndex":4\},\{"imageOffset":52481608930143,"imageIndex":4\},\{"imageOffset":52481609683414,"imageIndex":4\},\{"imageOffset":52481608930143,"imageIndex":4\},\{"imageOffset":52481609272030,"imageIndex":4\},\{"imageOffset":52481609683414,"imageIndex":4\},\{"imageOffset":52481609683414,"imageIndex":4\},\{"imageOffset":52481608930143,"imageIndex":4\},\{"imageOffset":52481608925753,"imageIndex":4\},\{"imageOffset":52481608925441,"imageIndex":4\},\{"imageOffset":4805411,"symbol":"v8::internal::(anonymous namespace)::Invoke(v8::internal::Isolate*, bool, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*, v8::internal::Handle<v8::internal::Object>, v8::internal::Execution::MessageHandling)","symbolLocation":675,"imageIndex":3\},\{"imageOffset":4804590,"symbol":"v8::internal::Execution::Call(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*)","symbolLocation":158,"imageIndex":3\},\{"imageOffset":1509101,"symbol":"v8::Function::Call(v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*)","symbolLocation":381,"imageIndex":3\},\{"imageOffset":21090,"symbol":"VulcanAdapter::asyncMessageCallback(uv_async_s*)","symbolLocation":860,"imageIndex":5\},\{"imageOffset":11418410,"symbol":"uv__async_io","symbolLocation":317,"imageIndex":3\},\{"imageOffset":11485456,"symbol":"uv__io_poll","symbolLocation":1934,"imageIndex":3\},\{"imageOffset":11419563,"symbol":"uv_run","symbolLocation":321,"imageIndex":3\},\{"imageOffset":200242,"symbol":"node::Start(v8::Isolate*, node::IsolateData*, int, char const* const*, int, char const* const*)","symbolLocation":816,"imageIndex":3\},\{"imageOffset":175217,"symbol":"node::Start(uv_loop_s*, int, char const* const*, int, char const* const*)","symbolLocation":454,"imageIndex":3\},\{"imageOffset":172355,"symbol":"node::Start(int, char**)","symbolLocation":530,"imageIndex":3\},\{"imageOffset":4148,"symbol":"start","symbolLocation":52,"imageIndex":3\}]\},\{"id":22456,"frames":[\{"imageOffset":17370,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":6\},\{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":0\},\{"imageOffset":11466428,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":3\},\{"imageOffset":464763,"symbol":"node::TaskQueue<v8::Task>::BlockingPop()","symbolLocation":55,"imageIndex":3\},\{"imageOffset":463355,"symbol":"node::BackgroundRunner(void*)","symbolLocation":46,"imageIndex":3\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\},\{"id":22457,"frames":[\{"imageOffset":17370,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":6\},\{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":0\},\{"imageOffset":11466428,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":3\},\{"imageOffset":464763,"symbol":"node::TaskQueue<v8::Task>::BlockingPop()","symbolLocation":55,"imageIndex":3\},\{"imageOffset":463355,"symbol":"node::BackgroundRunner(void*)","symbolLocation":46,"imageIndex":3\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\},\{"id":22458,"frames":[\{"imageOffset":17370,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":6\},\{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":0\},\{"imageOffset":11466428,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":3\},\{"imageOffset":464763,"symbol":"node::TaskQueue<v8::Task>::BlockingPop()","symbolLocation":55,"imageIndex":3\},\{"imageOffset":463355,"symbol":"node::BackgroundRunner(void*)","symbolLocation":46,"imageIndex":3\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\},\{"id":22459,"frames":[\{"imageOffset":17370,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":6\},\{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":0\},\{"imageOffset":11466428,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":3\},\{"imageOffset":464763,"symbol":"node::TaskQueue<v8::Task>::BlockingPop()","symbolLocation":55,"imageIndex":3\},\{"imageOffset":463355,"symbol":"node::BackgroundRunner(void*)","symbolLocation":46,"imageIndex":3\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\},\{"id":22460,"frames":[\{"imageOffset":6566,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":6\},\{"imageOffset":11466138,"symbol":"uv_sem_wait","symbolLocation":16,"imageIndex":3\},\{"imageOffset":676230,"symbol":"node::inspector::(anonymous namespace)::StartIoThreadMain(void*)","symbolLocation":28,"imageIndex":3\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\},\{"id":22462,"frames":[\{"imageOffset":17370,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":6\},\{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":0\},\{"imageOffset":11466428,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":3\},\{"imageOffset":11411406,"symbol":"worker","symbolLocation":232,"imageIndex":3\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\},\{"id":22463,"frames":[\{"imageOffset":17370,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":6\},\{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":0\},\{"imageOffset":11466428,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":3\},\{"imageOffset":11411406,"symbol":"worker","symbolLocation":232,"imageIndex":3\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\},\{"id":22464,"frames":[\{"imageOffset":17370,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":6\},\{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":0\},\{"imageOffset":11466428,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":3\},\{"imageOffset":11411406,"symbol":"worker","symbolLocation":232,"imageIndex":3\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\},\{"id":22465,"frames":[\{"imageOffset":17370,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":6\},\{"imageOffset":27247,"symbol":"_pthread_cond_wait","symbolLocation":1249,"imageIndex":0\},\{"imageOffset":11466428,"symbol":"uv_cond_wait","symbolLocation":9,"imageIndex":3\},\{"imageOffset":11411406,"symbol":"worker","symbolLocation":232,"imageIndex":3\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\},\{"id":22467,"queue":"com.apple.root.default-qos","frames":[\{"imageOffset":6506,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":6\},\{"imageOffset":7384,"symbol":"mach_msg","symbolLocation":56,"imageIndex":6\},\{"imageOffset":525197,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":319,"imageIndex":7\},\{"imageOffset":518680,"symbol":"__CFRunLoopRun","symbolLocation":1276,"imageIndex":7\},\{"imageOffset":515676,"symbol":"CFRunLoopRunSpecific","symbolLocation":562,"imageIndex":7\},\{"imageOffset":1072619,"symbol":"CFRunLoopRun","symbolLocation":40,"imageIndex":7\},\{"imageOffset":8396,"symbol":"_dispatch_call_block_and_release","symbolLocation":12,"imageIndex":8\},\{"imageOffset":13079,"symbol":"_dispatch_client_callout","symbolLocation":8,"imageIndex":8\},\{"imageOffset":23036,"symbol":"_dispatch_queue_override_invoke","symbolLocation":787,"imageIndex":8\},\{"imageOffset":76482,"symbol":"_dispatch_root_queue_drain","symbolLocation":343,"imageIndex":8\},\{"imageOffset":78428,"symbol":"_dispatch_worker_thread2","symbolLocation":160,"imageIndex":8\},\{"imageOffset":12170,"symbol":"_pthread_wqthread","symbolLocation":256,"imageIndex":0\},\{"imageOffset":8023,"symbol":"start_wqthread","symbolLocation":15,"imageIndex":0\}]\},\{"id":22468,"frames":[\{"imageOffset":8008,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":0\}]\},\{"triggered":true,"id":22469,"instructionState":\{"instructionStream":\{"bytes":[49,201,232,63,0,0,0,72,133,192,116,9,72,141,5,228,70,0,0,235,7,72,141,5,235,70,0,0,73,137,7,65,183,1,68,137,248,72,131,196,8,91,65,94,65,95,93,195,73,139,78,32,72,139,64,32,72,139,73,8,72,59,72,8,65,15,148,199,235,220,85,72,137,229,65,87,65,86,65,85,65,84,83,72,131,236,104,73,137,204,73,137,253,72,139,7,76,139,112,240,73,1,254,76,139,120,248,72,137,85,208,72,137,149,120,255,255,255,72,137,125,128,72,137,117,200,72,137,117,136,72,137,77,144,15,87,192,15,17,69,152,15,17,69,168,15,17,69,183,138,5,236,201,114,65,132,192,15,132,61,2,0,0,138,29,134,180,120,65,132,219,15,132,8,1,0,0,76,59,125,208,15,132,16,1,0,0,73,139,127,8,72],"offset":96\}\},"name":"VulcanMsgRecv","threadState":\{"r13":\{"value":105553140439552\},"rax":\{"value":209653994478080\},"rflags":\{"value":66050\},"cpu":\{"value":2\},"r14":\{"value":105553128991856\},"rsi":\{"value":4411583024,"symbolLocation":0,"symbol":"typeinfo for vcfoundation::IVCType"\},"r8":\{"value":464836564093923177\},"cr2":\{"value":105553155284992\},"rdx":\{"value":4411584448,"symbolLocation":0,"symbol":"typeinfo for vcfoundation::kyle::IVCString"\},"r10":\{"value":123145410546040\},"r9":\{"value":123145410546176\},"r15":\{"value":105553140439552\},"rbx":\{"value":105553140439552\},"trap":\{"value":13\},"err":\{"value":0\},"r11":\{"value":18446620932636026512\},"rip":\{"value":140703158226161,"matchesCrashFrame":1\},"rbp":\{"value":123145410546752\},"rsp":\{"value":123145410546608\},"r12":\{"value":0\},"rcx":\{"value":0\},"flavor":"x86_THREAD_STATE","rdi":\{"value":105553140439552\}\},"frames":[\{"imageOffset":68849,"symbol":"__dynamic_cast","symbolLocation":26,"imageIndex":9\},\{"imageOffset":105982,"symbol":"vcfoundation::io::Serializer::Serialize(vcfoundation::IVCType*)","symbolLocation":64,"imageIndex":10\},\{"imageOffset":107575,"symbol":"vcfoundation::io::Serializer::SerializeMap(vcfoundation::kyle::IVCMap*)","symbolLocation":125,"imageIndex":10\},\{"imageOffset":106357,"symbol":"vcfoundation::io::Serializer::Serialize(vcfoundation::IVCType*)","symbolLocation":439,"imageIndex":10\},\{"imageOffset":107408,"symbol":"vcfoundation::io::Serializer::SerializeArray(vcfoundation::kyle::IVCList*)","symbolLocation":108,"imageIndex":10\},\{"imageOffset":106315,"symbol":"vcfoundation::io::Serializer::Serialize(vcfoundation::IVCType*)","symbolLocation":397,"imageIndex":10\},\{"imageOffset":121549,"symbol":"vcfoundation::ncomm::Connection::WriteOut(vcfoundation::IVCType*)","symbolLocation":19,"imageIndex":10\},\{"imageOffset":120681,"symbol":"vcfoundation::ncomm::NCService::Execute(vcfoundation::ncomm::INCRequest*, vcfoundation::ncomm::INCListener&)","symbolLocation":143,"imageIndex":10\},\{"imageOffset":120522,"symbol":"vcfoundation::ncomm::NCService::Execute(vcfoundation::ncomm::INCRequest*)","symbolLocation":28,"imageIndex":10\},\{"imageOffset":61492,"symbol":"adobe::vulcan::servicemgr::CSIRequest::Execute()","symbolLocation":50,"imageIndex":10\},\{"imageOffset":59211,"symbol":"adobe::vulcan::servicemgr::RegisterForEventsRequest::Run()","symbolLocation":943,"imageIndex":10\},\{"imageOffset":125301,"symbol":"vcfoundation::thread::AbstractThread::Run()","symbolLocation":65,"imageIndex":10\},\{"imageOffset":133261,"symbol":"vcfoundation::thread::thread::ThreadProc(void*)","symbolLocation":9,"imageIndex":10\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\},\{"id":22480,"frames":[\{"imageOffset":6506,"symbol":"mach_msg_trap","symbolLocation":10,"imageIndex":6\},\{"imageOffset":7384,"symbol":"mach_msg","symbolLocation":56,"imageIndex":6\},\{"imageOffset":525197,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":319,"imageIndex":7\},\{"imageOffset":518680,"symbol":"__CFRunLoopRun","symbolLocation":1276,"imageIndex":7\},\{"imageOffset":515676,"symbol":"CFRunLoopRunSpecific","symbolLocation":562,"imageIndex":7\},\{"imageOffset":1072619,"symbol":"CFRunLoopRun","symbolLocation":40,"imageIndex":7\},\{"imageOffset":11480859,"symbol":"uv__cf_loop_runner","symbolLocation":70,"imageIndex":3\},\{"imageOffset":25825,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":0\},\{"imageOffset":8043,"symbol":"thread_start","symbolLocation":15,"imageIndex":0\}]\}],\
+  "usedImages" : [\
+  \{\
+    "source" : "P",\
+    "arch" : "x86_64",\
+    "base" : 140703158476800,\
+    "size" : 49152,\
+    "uuid" : "9fdfa3fa-49b8-38d2-a827-597312313ed0",\
+    "path" : "\\/usr\\/lib\\/system\\/libsystem_pthread.dylib",\
+    "name" : "libsystem_pthread.dylib"\
+  \},\
+  \{\
+    "source" : "P",\
+    "arch" : "x86_64",\
+    "base" : 140703157792768,\
+    "size" : 364544,\
+    "uuid" : "879ca921-82fd-3797-a825-d76b04210669",\
+    "path" : "\\/usr\\/lib\\/libc++.1.dylib",\
+    "name" : "libc++.1.dylib"\
+  \},\
+  \{\
+    "source" : "P",\
+    "arch" : "x86_64",\
+    "base" : 140703157231616,\
+    "size" : 561152,\
+    "uuid" : "e8fb285d-f389-3f6e-b4c1-c709491b528d",\
+    "path" : "\\/usr\\/lib\\/system\\/libsystem_c.dylib",\
+    "name" : "libsystem_c.dylib"\
+  \},\
+  \{\
+    "source" : "P",\
+    "arch" : "x86_64",\
+    "base" : 4294967296,\
+    "size" : 21647360,\
+    "uuid" : "5bf057ec-dab0-3166-a528-5c0fde2e2792",\
+    "path" : "\\/Library\\/Application Support\\/Adobe\\/*\\/CCLibrary.app\\/Contents\\/libs\\/node",\
+    "name" : "node"\
+  \},\
+  \{\
+    "size" : 0,\
+    "source" : "A",\
+    "base" : 0,\
+    "uuid" : "00000000-0000-0000-0000-000000000000"\
+  \},\
+  \{\
+    "source" : "P",\
+    "arch" : "x86_64",\
+    "base" : 4378181632,\
+    "size" : 69632,\
+    "uuid" : "e5720d28-ffc9-3d00-8d23-cf512b7be553",\
+    "path" : "\\/Library\\/Application Support\\/Adobe\\/*\\/CCLibrary.app\\/Contents\\/js\\/node_modules\\/node-vulcanjs\\/build\\/Release\\/VulcanJS.node",\
+    "name" : "VulcanJS.node"\
+  \},\
+  \{\
+    "source" : "P",\
+    "arch" : "x86_64",\
+    "base" : 140703158247424,\
+    "size" : 229376,\
+    "uuid" : "1e734a78-3e63-3c82-b92c-84bd9a56a0d8",\
+    "path" : "\\/usr\\/lib\\/system\\/libsystem_kernel.dylib",\
+    "name" : "libsystem_kernel.dylib"\
+  \},\
+  \{\
+    "source" : "P",\
+    "arch" : "x86_64h",\
+    "base" : 140703158792192,\
+    "CFBundleShortVersionString" : "6.9",\
+    "CFBundleIdentifier" : "com.apple.CoreFoundation",\
+    "size" : 5255168,\
+    "uuid" : "e5c313ce-9afe-36db-a64c-6575512f2db9",\
+    "path" : "\\/System\\/Library\\/Frameworks\\/CoreFoundation.framework\\/Versions\\/A\\/CoreFoundation",\
+    "name" : "CoreFoundation",\
+    "CFBundleVersion" : "1864"\
+  \},\
+  \{\
+    "source" : "P",\
+    "arch" : "x86_64",\
+    "base" : 140703156690944,\
+    "size" : 290816,\
+    "uuid" : "bea126fd-f5f9-38b4-a1d1-6a435acd3c75",\
+    "path" : "\\/usr\\/lib\\/system\\/libdispatch.dylib",\
+    "name" : "libdispatch.dylib"\
+  \},\
+  \{\
+    "source" : "P",\
+    "arch" : "x86_64",\
+    "base" : 140703158157312,\
+    "size" : 90112,\
+    "uuid" : "c0d56998-9a5b-355f-a9a8-08e14dc88dc5",\
+    "path" : "\\/usr\\/lib\\/libc++abi.dylib",\
+    "name" : "libc++abi.dylib"\
+  \},\
+  \{\
+    "source" : "P",\
+    "arch" : "x86_64",\
+    "base" : 4411400192,\
+    "size" : 176128,\
+    "uuid" : "63dd9314-514e-3903-8c18-b83a93e127a0",\
+    "path" : "\\/Library\\/Application Support\\/Adobe\\/*\\/CCLibrary.app\\/Contents\\/js\\/node_modules\\/node-vulcanjs\\/build\\/Release\\/VulcanMessage5.dylib",\
+    "name" : "VulcanMessage5.dylib"\
+  \}\
+],\
+  "sharedCache" : \{\
+  "base" : 140703155220480,\
+  "size" : 15220736000,\
+  "uuid" : "eda4d0b1-314e-3b1c-96be-54dca1883554"\
+\},\
+  "vmSummary" : "ReadOnly portion of Libraries: Total=871.4M resident=0K(0%) swapped_out_or_unallocated=871.4M(100%)\\nWritable regions: Total=685.3M written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=685.3M(100%)\\n\\n                                VIRTUAL   REGION \\nREGION TYPE                        SIZE    COUNT (non-coalesced) \\n===========                     =======  ======= \\nActivity Tracing                   256K        1 \\nKernel Alloc Once                    8K        1 \\nMALLOC                           203.8M       44 \\nMALLOC guard page                   16K        4 \\nMALLOC_NANO (reserved)           384.0M        1         reserved VM address space (unallocated)\\nMemory Tag 255                   546.9M      105 \\nObjC additional data                15K        1 \\nSTACK GUARD                       56.1M       14 \\nStack                             73.6M       14 \\nVM_ALLOCATE                         16K        4 \\n__DATA                            16.3M      257 \\n__DATA_CONST                      11.0M      146 \\n__DATA_DIRTY                       493K       87 \\n__FONT_DATA                          4K        1 \\n__LINKEDIT                       663.0M       20 \\n__TEXT                           208.4M      268 \\n__UNICODE                          592K        1 \\ndyld private memory               1024K        1 \\nmapped file                        224K        2 \\nshared memory                      612K       10 \\n===========                     =======  ======= \\nTOTAL                              2.1G      982 \\nTOTAL, minus reserved VM space     1.7G      982 \\n",\
+  "legacyInfo" : \{\
+  "threadTriggered" : \{\
+    "name" : "VulcanMsgRecv"\
+  \}\
+\},\
+  "trialInfo" : \{\
+  "rollouts" : [\
+    \{\
+      "rolloutId" : "60da5e84ab0ca017dace9abf",\
+      "factorPackIds" : \{\
+\
+      \},\
+      "deploymentId" : 250000007\
+    \},\
+    \{\
+      "rolloutId" : "6112e14f37f5d11121dcd519",\
+      "factorPackIds" : \{\
+        "SIRI_TEXT_TO_SPEECH" : "629e532853177477974a0157"\
+      \},\
+      "deploymentId" : 250000141\
+    \}\
+  ],\
+  "experiments" : [\
+\
+  ]\
+\}\
+\}\
+\
+Model: iMac16,2, BootROM 430.120.6.0.0, 4 processors, Quad-Core Intel Core i7, 3.3 GHz, 16 GB, SMC 2.32f21\
+Graphics: Intel Iris Pro Graphics 6200, Intel Iris Pro Graphics 6200, Built-In\
+Display: iMac, 4096 x 2304 Retina, Main, MirrorOff, Online\
+Memory Module: BANK 0/DIMM0, 8 GB, DDR3, 1867 MHz, 0x80CE, 0x4B3445424533303445422D45474346202020\
+Memory Module: BANK 1/DIMM0, 8 GB, DDR3, 1867 MHz, 0x80CE, 0x4B3445424533303445422D45474346202020\
+AirPort: spairport_wireless_card_type_wifi (0x14E4, 0x156), Broadcom BCM43xx 1.0 (7.77.111.1 AirPortDriverBrcmNIC-1710.3)\
+Bluetooth: Version (null), 0 services, 0 devices, 0 incoming serial ports\
+Network Service: Ethernet, Ethernet, en0\
+Serial ATA Device: APPLE SSD SM0512G, 500.28 GB\
+USB Device: USB30Bus\
+USB Device: Bluetooth USB Host Controller\
+USB Device: FaceTime HD Camera (Built-in)\
+USB Device: Tiger USB Optical Mouse\
+USB Device: Keyboard Hub\
+USB Device: Apple Keyboard\
+Thunderbolt Bus: iMac, Apple Inc., 27.4}
